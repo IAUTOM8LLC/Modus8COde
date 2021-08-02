@@ -1,0 +1,13 @@
+@inputFocusBorderColor: #c3922e;
+@inputBorder: 2px solid white;
+@inputPadding: 12px 18px;
+@textAreaBorder: @inputBorder;
+@textAreaFocusBorderColor: @inputFocusBorderColor;
+@labelColor: #78909c;
+@formErrorColor: @labelColor;
+@labelMargin: 0 0 12px 2px;
+@formErrorBackground: white;
+@formErrorBorder: #ef433f;
+@inputErrorFocusBackground: white;
+@dropdownErrorSelectedBackground: white;
+@dropdownErrorHoverBackground: #0000000d;

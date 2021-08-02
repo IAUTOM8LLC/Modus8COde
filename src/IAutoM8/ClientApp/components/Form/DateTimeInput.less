@@ -1,0 +1,95 @@
+@import '~react-widgets/lib/less/react-widgets';
+@import '~@styles/mixins.less';
+@font-path: '~react-widgets/lib/fonts';
+
+.rw-widget-picker > input {
+    border: none !important;
+}
+
+.rw-state-focus > .rw-widget-container,
+.rw-state-focus > .rw-widget-container:active,
+.rw-state-focus > .rw-widget-container:focus,
+.rw-state-focus > .rw-widget-container:hover,
+.rw-widget-container.rw-state-focus,
+.rw-widget-container.rw-state-focus:active,
+.rw-widget-container.rw-state-focus:focus,
+.rw-widget-container.rw-state-focus:hover {
+    box-shadow: none;
+    border: 2px solid #c3922e !important;
+    outline: none;
+}
+
+.field.error {
+    .rw-widget-picker {
+        border: 2px solid #ef433f;
+    }
+}
+
+.modus-date-time {
+    .rw-widget-picker {
+        border: 2px solid #f4f7f9;
+        border-radius: 5px;
+
+        &.rw-widget-container {
+            display: flex;
+            height: 45px;
+
+            .rw-input {
+                flex: 1;
+            }
+
+            .rw-select {
+                flex: 0;
+                align-self: center;
+                width: 100% !important;
+            }
+        }
+    }
+
+    .rw-select-bordered {
+        border: none;
+        padding-right: 10px;
+
+        &:hover {
+            background: white;
+        }
+
+        button {
+            width: 40px;
+
+            .rw-i {
+                .icons-sprite();
+
+                &::before {
+                    content: '';
+                }
+
+                &.rw-i-calendar {
+                    background-position: -43px -66px;
+                    height: 15px !important;
+                    width: 18px !important;
+                }
+
+                &.rw-i-clock-o {
+                    background-position: -43px -82px;
+                    height: 16px !important;
+                    width: 18px !important;
+                }
+            }
+
+            &:hover {
+                .rw-i {
+                    &.rw-i-calendar {
+                        background-position: -65px -66px;
+
+                    }
+
+                    &.rw-i-clock-o {
+                        background-position: -65px -82px;
+
+                    }
+                }
+            }
+        }
+    }
+}

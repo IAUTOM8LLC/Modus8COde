@@ -1,0 +1,79 @@
+@import '../../styles/colors.less';
+
+.login-form {
+    padding: 50px 0;
+    display: flex;
+    min-height: 100vh;
+
+    & > div {
+        flex: 1;
+        align-self: center;
+    }
+
+    &:before {
+        content: "";
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: -moz-radial-gradient(50% 16%, ellipse farthest-corner, rgb(246, 225, 147) 0%, rgb(133, 88, 35) 100%);
+        background: -webkit-radial-gradient(50% 16%, ellipse farthest-corner, rgb(246, 225, 147) 0%, rgb(133, 88, 35) 100%);
+        background: -o-radial-gradient(50% 16%, ellipse farthest-corner, rgb(246, 225, 147) 0%, rgb(133, 88, 35) 100%);
+        background: -ms-radial-gradient(50% 16%, ellipse farthest-corner, rgb(246, 225, 147) 0%, rgb(133, 88, 35) 100%);
+        -ms-filter:  "progid:DXImageTransform.Microsoft.Alpha(Stlye=2);";
+        background: radial-gradient(50% 16%, ellipse farthest-corner, rgb(246, 225, 147) 0%, rgb(133, 88, 35) 100%);
+        filter: progid:DXImageTransform.Microsoft.Alpha(Stlye=2);
+    }
+
+    &__links {
+        color: #333;
+        font-weight: bold;
+        margin: 30px 0 10px !important;
+
+        a {
+            color: @accent;
+            text-transform: uppercase;
+        }
+    }
+
+    &__body {
+        background: white;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 3px;
+        max-width: 490px;
+
+        img {
+            padding: 59px 0;
+        }
+
+        &-wrapper.ui.segment {
+            padding: 0 35px;
+        }
+
+        .ui {
+            &.header {
+                color: #333;
+                margin-bottom: 40px;
+            }
+
+            &.form .field {
+                text-align: left;
+
+                input {
+                    border: none;
+                }
+
+                & > label {
+                    color: #78909c;
+                    font-weight: 100;
+                    font-size: 12px;
+                }
+            }
+
+            &.button {
+                margin-top: 100px;
+            }
+        }
+    }
+}

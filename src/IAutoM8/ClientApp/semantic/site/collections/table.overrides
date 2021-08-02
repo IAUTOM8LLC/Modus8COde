@@ -1,0 +1,16 @@
+.ui.table thead th {
+    font-size: .89em;
+}
+
+.ui.table tr td:first-child {
+    & > * {
+        color: #333;
+        font-size: 15px;
+
+        & + span {
+            color: #637b94;
+            margin-top: 5px;
+            display: inline-block;
+        }
+    }
+}

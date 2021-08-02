@@ -1,0 +1,4 @@
+.ui.toggle.checkbox input:checked ~ .box:after,
+.ui.toggle.checkbox input:checked ~ label:after {
+    background: #5d2584;
+}

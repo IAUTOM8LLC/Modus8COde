@@ -1,0 +1,392 @@
+@import 'jsplumb.less';
+@import '../../../styles/colors.less';
+@import '../../../styles/mixins.less';
+
+// TODO: remove and clean this pile of garbage
+@grayed-opacity: .4;
+
+.ui.card.card--editor > .content > .description,
+.ui.cards > .card.card--editor > .content > .description {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 18px;
+    max-height: 36px;
+    color: #637b94;
+    padding: 0 3px;
+    font-size: 13px;
+}
+
+.ui.card--editor .ui.circular.label {
+    font-size: 8px;
+}
+
+.jtk-main .gu-transit {
+    display: none;
+}
+
+.jtk-connector.grayed {
+    opacity: @grayed-opacity;
+}
+.jtk-connector.jtk-dragging {
+    z-index:100
+}
+.jtk-endpoint {
+    & > circle[cx="2"] {
+        visibility: hidden;
+    }
+
+    &.jtk-dragging > circle[cx="2"] {
+        visibility: visible
+    }
+}
+
+.demo {
+    /* for IE10+ touch devices */
+    touch-action: none;
+}
+
+.w {
+    position: absolute;
+    padding: 0 4px;
+    z-index: 4;
+    background-color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: move;
+    box-shadow: 0 0 10px 0 rgba(153, 153, 153, 0.3);
+
+    &.jtk-drag,
+    &.jtk-dragged {
+        //pointer-events: none;
+    }
+
+    .content.extra {
+        cursor: default !important;
+
+        .button {
+            cursor: pointer;
+        }
+    }
+}
+
+.card-status {
+    vertical-align: middle;
+    color: @grey;
+
+    span {
+        margin-right: 5px;
+    }
+}
+
+.card-status > span.red {
+    padding-left: 10px;
+    color: rgba(255, 0, 0, 0.7);
+}
+
+.card-status > .circular.label {
+    margin-right: 6px;
+    font-size: 9px;
+}
+
+.aLabel {
+    background-color: white;
+    opacity: 1;
+    padding: .3em;
+    border-radius: 6px;
+    border: 1px solid #637b94;
+    cursor: pointer;
+}
+
+.ep {
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    right: -12px;
+    background-color: white;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #566063;
+    border-radius: 100em;
+    cursor: pointer;
+
+    .ep-status(@color) {
+        border-color: @color;
+
+        &:hover {
+            background-color: @color;
+        }
+    }
+
+    &.new {
+        .ep-status(#d1a03e);
+    }
+
+    &.in-progress {
+        .ep-status(#566063);
+    }
+
+    &.completed {
+        .ep-status(#16a085);
+    }
+
+    &.needs-review {
+        .ep-status(#5d2684);
+    }
+}
+
+.jtk-endpoint {
+    z-index: 4;
+}
+
+.dragHover {
+    border: 2px solid orange;
+}
+
+.jtk-endpoint,
+path {
+    cursor: pointer;
+}
+
+.jtk-main {
+    overflow: hidden;
+    margin-bottom: 100px;
+    position: relative;
+    .no-select();
+}
+
+.jtk-surface {
+    min-height: 80vh;
+    overflow: visible !important;
+}
+
+.card--editor {
+    min-height: 90px !important;
+    max-width: 270px !important;
+    margin: 5px 1px !important;
+}
+
+.card-status {
+    background: #566063;
+    text-transform: uppercase;
+    border-radius: 50px;
+    padding: 0 10px;
+    color: #fff;
+    display: inline-block;
+    font-size: 9px;
+    height: 15px;
+    line-height: 16px;
+    font-weight: 100;
+
+    &--new {
+        background: #d1a03e;
+    }
+
+    &--completed {
+        background: #16a085;
+    }
+
+    &--needs-review {
+        background: #5d2684;
+    }
+
+    &--overdue {
+        background: #CE3333;
+        margin-left: 10px;
+    }
+}
+
+.flex-editor {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    #right {
+        background: #dfe7eb;
+        .no-select();
+    }
+}
+
+.card-editor-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+
+    .task-actions {
+        margin-left: 10px;
+    }
+}
+
+.task-footer {
+    margin-top: 16px;
+}
+
+.task-header {
+    margin-bottom: 13px;
+
+    &.sub {
+        margin-bottom: 0px;
+    }
+}
+
+.w.node.grayed {
+    opacity: @grayed-opacity;
+
+    & .menu {
+        opacity: 1.0;
+    }
+}
+
+.task-group {
+    position: absolute;
+    min-width: 280px;
+    min-height: 55px;
+    background: #eff3f5;
+    background: rgba(239, 243, 245, 0.95);
+    border-radius: 4px;
+    font-size: 12px;
+    transition: width 200ms ease-in, height 200ms ease-in;
+    box-shadow: 0 0 20px 0 rgba(153, 153, 153, 0.15);
+    z-index: 5;
+    cursor: move;
+
+    &[adjusting="true"] .w {
+        transition: left 200ms ease-in, top 200ms ease-in;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        color: #0a95dd;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 8px;
+
+        & > .ep {
+            right: -7px;
+        }
+    }
+
+    &__header {
+        flex: 1;
+        margin: 0 20px;
+        padding-top: 6px;
+        word-wrap: break-word;
+        word-break: break-all;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__actions {
+        padding: 5px 15px 0 0;
+        align-self: flex-start;
+    }
+
+    &__dropdown {
+
+        .menu {
+            .item {
+                a {
+                    color: #637b94;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 12px;
+                }
+
+                .icon {
+                    margin-bottom: -3px;
+                    margin-right: 10px;
+
+                    &.iauto--play {
+                        margin-left: 5px;
+                        margin-right: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__toggle {
+        cursor: pointer;
+        margin: 0 0 1px 22px;
+        padding: 5px;
+
+        i {
+            width: 19px;
+            height: 4px;
+            border-radius: 100em;
+            display: inline-block;
+            background: #637b94;
+            margin-bottom: 1px;
+
+            &:hover {
+                background: #b68832;
+            }
+        }
+    }
+
+    &.jtk-group-collapsed {
+        min-height: 50px;
+        width: 280px !important;
+        text-overflow: ellipsis;
+        background: rgba(239, 243, 245, 1);
+        z-index: 4;
+
+        & > .w {
+            display: none;
+        }
+
+        .task-group {
+            &__head {
+                display: block;
+                align-items: unset;
+            }
+
+            &__actions {
+                padding: 10px 0 0 0;
+            }
+
+            &__header {
+                margin-right: 10px;
+                width: 210px;
+                float: left;
+                white-space: normal;
+                overflow: hidden;
+                text-overflow: unset;
+                padding: 0 0 10px 0;
+            }
+
+            &__dropdown {
+                float: left;
+                margin: 0;
+            }
+
+            &__toggle {
+                margin: -35px 15px 0 0;
+                display: block;
+                float: right;
+                padding: 0 5px 0 0;
+            }
+        }
+    }
+}
+
+.from-formula {
+    &.jtk-connector {
+        z-index: 5;
+    }
+
+    &.jtk-endpoint {
+        z-index: 6;
+    }
+
+    &.aLabel {
+        z-index: 6;
+    }
+}
+.colapsed-connection {
+    display:none
+}

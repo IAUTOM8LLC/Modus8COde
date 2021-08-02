@@ -1,0 +1,162 @@
+@model IAutoM8.Service.Notification.Models.DailyFullTemplateModel
+
+<table border="0" cellpadding="0" cellspacing="0" style="margin:0 auto; padding:0; max-width: 600px; width: 100%;">
+    <tbody>
+        <tr>
+            <td>
+                <center>
+                    <table>
+                        <tr>
+                            <td>
+                                <center>
+                                    <div style="padding: 50px;">
+                                        <img alt="" border="0" width="100%" height="100%" style="display:block;" src="https://marketing-image-production.s3.amazonaws.com/uploads/153b82e395d019a08c909441afdbed1d4ea044e4fd137d975effd1b23885699c917f6f30f36bd05c7e59ab48416a71e276494f9a579b3bcf36af9c59db758502.png" />
+                                    </div>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                    <table border="0" cellpadding="0" cellspacing="0" style="margin:0; padding:0; border-top: 5px solid; border-top-color: #c3912e; border-radius: 8px; background-color: #f3f7fa;" width="100%">
+                        <tr>
+                            <td>
+                                <center>
+                                    <h2 style="margin: 0; padding-top: 50px; color: #333333">
+                                        Good Evening, @Model.FullName!
+                                    </h2>
+
+                                    <p style="margin: 0; padding: 40px 17% 0px 17%">
+                                        Below is a review of your companies progress today
+                                    </p>
+                                    @foreach(var summ in Model.Summary)
+                                    {
+                                    <p style="margin: 0; padding: 40px 17% 25px 17%; width: 350px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Below is a review for @summ.FullName</p>
+                                    <table style="padding: 0 35px">
+                                        <tr>
+                                            <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+                                                <p style="padding: 8px 10px;">User Type</p>
+                                            </th>
+                                            <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+                                                <p style="padding: 8px 10px;">Up Coming</p>
+                                            </th>
+                                            <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+                                                <p style="padding: 8px 10px;">To Do</p>
+                                            </th>
+                                            <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+                                                <p style="padding: 8px 10px;">To Do Started</p>
+                                            </th>
+                                            <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+                                                <p style="padding: 8px 10px;">Needs Review</p>
+                                            </th>
+                                            <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+                                                <p style="padding: 8px 10px;">Completed</p>
+                                            </th>
+                                        </tr>
+                                        @if (summ.ManagerSummary != null)
+                                        {
+                                        <tr>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">M</p>
+                                                </center>
+                                            </td>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">@summ.ManagerSummary.ManagerUpcommings.Count</p>
+                                                </center>
+                                            </td>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">@summ.ManagerSummary.ManagerInProccessings.Count</p>
+                                                </center>
+                                            </td>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">@summ.ManagerSummary.ManagerReviewings.Count</p>
+                                                </center>
+                                            </td>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">@summ.ManagerSummary.ManagerNeedReviews.Count</p>
+                                                </center>
+                                            </td>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">@summ.ManagerSummary.ManagerAcceptReviews.Count</p>
+                                                </center>
+                                            </td>
+                                        </tr>
+                                        }
+                                        <tr>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">W</p>
+                                                </center>
+                                            </td>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">@summ.WorkerSummary.Upcommings.Count</p>
+                                                </center>
+                                            </td>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">@summ.WorkerSummary.InProgressings.Count</p>
+                                                </center>
+                                            </td>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">@summ.WorkerSummary.Proccessings.Count</p>
+                                                </center>
+                                            </td>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">@summ.WorkerSummary.NeedReviews.Count</p>
+                                                </center>
+                                            </td>
+                                            <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+                                                <center>
+                                                    <p style="padding: 8px 10px;">@summ.WorkerSummary.Completed.Count</p>
+                                                </center>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    }
+
+                                    <p style="margin: 0; padding-top: 30px">
+                                        Have a great evening! We will see you tomorrow!
+                                    </p>
+
+                                    <p style="margin: 0; padding-top: 30px; padding-bottom: 50px">
+                                        Have any News to share? Want us to feature your
+                                        business? <a style="color: #566163" href="#">Click here</a> to submit an application for sharing!
+                                    </p>
+
+                                    <p style="margin: 0; padding-bottom: 50px">
+                                        <b style="color: #333333">-The MODUS8 Team</b>
+                                    </p>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>
+                                <center>
+                                    <div style="padding-top: 50px; font-family: 'Trebuchet MS', Helvetica, sans-serif; color: #6d859d;">
+                                        <p style="margin: 0; padding-bottom: 13px;">
+                                            <a style="color: inherit" href="@Model.SiteUrl">
+                                                <u>Unsibscribe or update your email settings</u>
+                                            </a>
+                                        </p>
+                                        <p style="margin: 0; padding-bottom: 10px">&copy; IAUTOM8</p>
+                                        <p style="margin: 0; padding-bottom: 13px;"><a style="color: #c79a43" href="@Model.SiteUrl"><u>North Mankato, MN 56003</u></a></p>
+                                        <p style="margin: 0;">Privacy Policy</p>
+                                    </div>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </td>
+        </tr>
+    </tbody>
+</table>

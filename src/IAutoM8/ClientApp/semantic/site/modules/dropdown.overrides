@@ -1,0 +1,25 @@
+.ui.selection.dropdown.active,
+.ui.selection.dropdown.visible {
+    border: 2px solid #c3922e;
+}
+
+.ui.multiple.dropdown {
+    padding: 6px 15px;
+    min-height: 50px;
+}
+
+.ui.multiple.dropdown > .label {
+    box-shadow: none;
+    background: #e6ebf4;
+    border: 1px solid #c9daed;
+    color: #333333;
+    padding: 7px 9px;
+
+    &.active:hover {
+        background: #e6ebf4;
+    }
+
+    .delete.icon {
+        color: #637b94;
+    }
+}

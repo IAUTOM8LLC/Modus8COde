@@ -1,0 +1,39 @@
+.signup-form {
+    height: 100vh;
+    margin: -5% 5% 0;
+}
+.ui.grid .row > .column:not(.row) {
+    &.login-form {
+        &__body {
+            width: 100%;
+        }
+    }
+
+    &.signup-alternative {
+        width: 100%;
+        max-width: 350px;
+        background-color: #6a3684;
+        color: #afbecd;
+        height: 100%;
+        font-size: 14pt;
+
+        .header {
+            color: white;
+            font-size: 16pt;
+        }
+
+        .segment {
+
+            &.table-seg {
+                height: 100%;
+                display: table;
+                text-align: center;
+            }
+
+            &.table-cell-seg {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+    }
+}

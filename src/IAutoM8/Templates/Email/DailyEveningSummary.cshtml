@@ -1,0 +1,91 @@
+@model IAutoM8.Service.Notification.Models.DailySummaryModel
+
+<table style="padding: 0 35px">
+    <tr>
+        <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+            <p style="padding: 8px 10px;">User Type</p>
+        </th>
+        <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+            <p style="padding: 8px 10px;">Up Coming</p>
+        </th>
+        <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+            <p style="padding: 8px 10px;">To Do</p>
+        </th>
+        <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+            <p style="padding: 8px 10px;">To Do Started</p>
+        </th>
+        <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+            <p style="padding: 8px 10px;">Needs Review</p>
+        </th>
+        <th style="margin: 0; height: 50px; width: 14%; background-color: #c3912e; color: #ffffff">
+            <p style="padding: 8px 10px;">Completed</p>
+        </th>
+    </tr>
+    @if (Model.ManagerSummary != null)
+    {
+    <tr>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">M</p>
+            </center>
+        </td>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">@Model.ManagerSummary.ManagerUpcommings.Count</p>
+            </center>
+        </td>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">@Model.ManagerSummary.ManagerInProccessings.Count</p>
+            </center>
+        </td>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">@Model.ManagerSummary.ManagerReviewings.Count</p>
+            </center>
+        </td>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">@Model.ManagerSummary.ManagerNeedReviews.Count</p>
+            </center>
+        </td>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">@Model.ManagerSummary.ManagerAcceptReviews.Count</p>
+            </center>
+        </td>
+    </tr>
+    }
+    <tr>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">W</p>
+            </center>
+        </td>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">@Model.WorkerSummary.Upcommings.Count</p>
+            </center>
+        </td>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">@Model.WorkerSummary.InProgressings.Count</p>
+            </center>
+        </td>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">@Model.WorkerSummary.Proccessings.Count</p>
+            </center>
+        </td>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">@Model.WorkerSummary.NeedReviews.Count</p>
+            </center>
+        </td>
+        <td style="margin: 0; height: 50px; width: 14%; background-color: #ffffff; color: #556064">
+            <center>
+                <p style="padding: 8px 10px;">@Model.WorkerSummary.Completed.Count</p>
+            </center>
+        </td>
+    </tr>
+</table>

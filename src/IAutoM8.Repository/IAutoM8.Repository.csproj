@@ -1,0 +1,58 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <AssemblyName>IAutoM8.Repository</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <PackageId>IAutoM8.Repository</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <Configurations>Debug;Prod;Staging</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20180716143819_AddCreditsToProfile.cs" />
+    <Compile Remove="Migrations\20180725160429_AddCreditTax.cs" />
+    <Compile Remove="Migrations\20180815100951_AddProjectTastToCreditLog.cs" />
+    <Compile Remove="Migrations\20180815102324_AddProjectTastToCreditLog.cs" />
+    <Compile Remove="Migrations\20180822153023_AddInfusionSignUp.cs" />
+    <Compile Remove="Migrations\20180822153355_AddInfusionSignUp.cs" />
+    <Compile Remove="Migrations\20190222152556_AddRating.cs" />
+    <Compile Remove="Migrations\20190225090556_AddRating.cs" />
+    <Compile Remove="Migrations\20190903074821_RemoveUser.cs" />
+    <Compile Remove="Migrations\20190904081126_RemoveUser.cs" />
+    <Compile Remove="Migrations\20190904081554_RemoveUser.cs" />
+    <Compile Remove="Migrations\20190913090122_Notification.cs" />
+    <Compile Remove="Migrations\20190913090712_Notification.cs" />
+    <Compile Remove="Migrations\20191202184445_Notification.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IAutoM8.Domain\IAutoM8.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="2.0.0-preview1-final">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.1">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.1" />
+  </ItemGroup>
+
+</Project>

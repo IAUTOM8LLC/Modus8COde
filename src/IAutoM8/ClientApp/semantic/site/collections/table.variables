@@ -1,0 +1,29 @@
+@iautoTableColor: #637b94;
+
+/* Prototype */
+@borderRadius: 0;
+@color: @iautoTableColor;
+@border: none;
+
+/* Headers */
+@headerColor: @color;
+@headerBackground: #eaeef0;
+@headerTextTransform: uppercase;
+@headerBorder: none;
+@headerVerticalPadding: 15px;
+@headerHorizontalPadding: 2em;
+
+/* Cells */
+@cellHorizontalPadding: 2em;
+@cellVerticalPadding: 1.26em;
+
+
+/* Sortable */
+@sortableBorder: none;
+@sortableActiveBackground: #e0e7ec;
+@sortableHoverBackground: @sortableActiveBackground;
+@sortableActiveHoverBackground: @sortableActiveBackground;
+@sortableColor: @iautoTableColor;
+@sortableHoverColor: @iautoTableColor;
+@sortableActiveColor: @iautoTableColor;
+@sortableActiveHoverColor: @iautoTableColor;

@@ -1,0 +1,60 @@
+@import '~@styles/mixins.less';
+
+.iauto-root__navbar {
+    &-search {
+        &.ui.input {
+            input {
+                margin-right: -9px;
+                padding-right: 14px !important;
+                border: none;
+                width: 0;
+                transition: all 200ms linear;
+                cursor: pointer;
+
+                &:focus {
+                    cursor: text;
+                    padding-left: 35px;
+                    width: 200px;
+                }
+
+                &:focus,
+                &:hover {
+                    & + i.icon {
+                        background-position: -86px -25px;
+                    }
+                }
+            }
+
+            i.icon {
+                top: 5px;
+                left: 0;
+                bottom: 0;
+                margin: auto 0;
+                width: 27px;
+                height: 27px;
+                .icons-sprite();
+                background-position: -86px 1px;
+
+                &:before {
+                    content: none;
+                }
+            }
+        }
+
+        &--opened {
+            &.ui.input input {
+                cursor: text;
+                padding-left: 35px;
+                width: 200px;
+
+                & + i.icon {
+                    background-position: -86px -25px;
+                }
+            }
+        }
+    }
+}
+
+.iauto-root__navbar.ui.menu.borderless.secondary {
+    height: 70px;
+}

@@ -1,0 +1,38 @@
+.chaining-editor-header {
+    display: flex;
+    background: white;
+    height: 50px;
+    z-index: 10;
+
+    &__buttons,
+    &__items {
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        .item {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 11px;
+            border-right: 1px solid #eceff5;
+            height: 100%;
+            color: #637b94;
+            font-weight: bold;
+            cursor: pointer;
+
+            &:hover {
+                background: #eceff5;
+            }
+        }
+    }
+
+    &__buttons {
+        flex: 1;
+    }
+
+    &__items {
+        flex: 4;
+    }
+}

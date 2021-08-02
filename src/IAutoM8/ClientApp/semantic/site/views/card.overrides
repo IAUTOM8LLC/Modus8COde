@@ -1,0 +1,36 @@
+.ui.card.modus {
+    border: none;
+    box-shadow: none;
+
+    &:hover{
+        transform: none;
+    }
+
+    &.completed {
+        & > .content .header {
+
+            color: #16a085;
+        }
+    }
+
+    &.in-progress {
+        & > .content .header {
+
+            color: #566063;
+        }
+    }
+
+    &.needs-review {
+        & > .content .header {
+
+            color: #5d2684;
+        }
+    }
+
+    &.new {
+        & > .content .header {
+
+            color: #d1a03e;
+        }
+    }
+}

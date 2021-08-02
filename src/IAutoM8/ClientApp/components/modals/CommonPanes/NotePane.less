@@ -1,0 +1,78 @@
+@import '~@styles/mixins.less';
+
+.notes-section {
+    display: flex;
+
+    .notes-input-text {
+        width: 90% !important;
+        margin-right: 20px !important;
+        height: 45px !important;
+        border-radius: 10px !important;
+    }
+}
+
+.ul-notes-list {
+    min-height: 150px;
+    background: #ecf1f4;
+    padding: 20px;
+    border-radius: 4px;
+    list-style-type: none;
+}
+
+.notes-pane {
+    &__note-item {
+        display: flex;
+        margin: 0 0 10px 1px;
+
+        &-info {
+            flex: 1;
+            padding: 10px 15px;
+
+            .task-note-text {
+                color: #333;
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+
+        &-actions {
+            .ui.segment {
+                background: #ecf1f4 !important;
+            }
+
+            .delete {
+                color: white;
+                background: #f18982 !important;
+            }
+
+            .publish {
+                color: white;
+                background: #A333C8 !important;
+            }
+
+            .published {
+                color: white;
+                background: #858286 !important;
+            }
+
+            .unactive {
+                color: white;
+                background: #d2d8db !important;
+            }
+        }
+    }
+}
+
+.publishCss {
+    text-transform: none !important;
+    padding: 9px 0px !important;
+    width: 90px;
+}
+
+.notes-pane__note-item-info.text {
+    word-break: break-word;
+}
+.notes-section textarea {
+    min-height: 0em !important;
+}
+                 

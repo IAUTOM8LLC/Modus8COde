@@ -1,0 +1,11 @@
+@selectionBorder: 2px solid #f4f7f9;
+@selectionPadding: 15px 15px 16px;
+@searchSelectionInputPadding: @selectionPadding;
+@multipleSelectionPadding: @selectionPadding;
+@selectionIconPadding: 16px 10px;
+@menuBorder: 2px solid #d0d7df;
+@selectionActiveHoverBorderColor: #c3922e;
+@selectionFocusBorderColor: @selectionActiveHoverBorderColor;
+@menuBorderWidth: 2px;
+@selectionHoverBorderColor: #f4f7f9;
+@selectionVisibleBorderColor: #c3922e;

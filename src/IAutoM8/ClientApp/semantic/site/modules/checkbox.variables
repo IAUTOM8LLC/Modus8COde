@@ -1,0 +1,25 @@
+@labelColor: #333;
+@toggleOnFocusLaneColor: green;
+
+/* Checkbox */
+@checkboxPressedBackground: #c3922e;
+@checkboxActiveBackground: #c3922e;
+@checkboxActiveCheckColor: white;
+@checkboxActiveBorderColor: #c3922e;
+@checkboxActiveFocusBackground: #c3922e;
+@checkboxActiveFocusCheckColor: white;
+@checkboxCheckFontSize: 12px;
+@checkboxFocusBorderColor: #c3922e;
+
+/* Toggle */
+@toggleWidth: 2.5rem;
+@toggleLaneWidth: 2.5rem;
+@toggleLaneHeight: 8px;
+@toggleHandleSize: 1.15rem;
+@toggleHandleOffset: .22rem;
+@toggleLaneVerticalOffset: .54rem;
+@toggleLaneBackground: #cfdce4;
+@handleBackground: #c3922e;
+@toggleOnLaneColor: #956fcb;
+@toggleOnFocusLaneColor: @toggleOnLaneColor;
+@toggleHoverColor: @toggleLaneBackground;

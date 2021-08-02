@@ -1,0 +1,169 @@
+@import '~@styles/colors.less';
+
+.iauto-notify {
+    &--cell {
+        display: flex;
+        cursor:pointer;
+
+        .iauto-notify--option_detail-header {
+            &_time {
+                float: none;
+            }
+
+            &_message {
+                width: auto;
+            }
+        }
+    }
+
+    &--header {
+        min-width: 300px;
+        height: 15px;
+
+        &_name, &_link-to {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        &_name {
+            float: left;
+            color: @font;
+        }
+
+        &_link-to {
+            float: right;
+            color: #65318a;
+        }
+
+        &_arrow_box {
+            margin-top: 6px;
+            float: right;
+            position: relative;
+            background: #65318a;
+        }
+
+        &_arrow_box:after {
+            left: 100%;
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(101, 49, 138, 0);
+            border-left-color: #65318a;
+            border-width: 4px;
+            margin-top: -4px;
+            margin-left: 2px;
+        }
+    }
+
+    &--option {
+        &_unread {
+            width: 9px;
+            height: 9px;
+            background: #0ad4ac;
+            border-radius: 50%;
+            margin: 3px 0px 0 27px;
+            position: absolute;
+        }
+
+        &_detail {
+            margin-left: 10px;
+            margin-bottom: 10px;
+
+            &-icon {
+                width: 35px;
+                height: 35px;
+                border-radius: 100em;
+                background: url(/images/notification_types.jpg) no-repeat;
+                background-size: 340px 86px;
+
+                &.notification {
+                    &-need-review {
+                        background-position: -42px -45px;
+                    }
+
+                    &-comment {
+                        background-position: -116px -5px;
+                    }
+
+                    &-formula-task {
+                        background-position: -153px -5px;
+                    }
+
+                    &-project-task {
+                        background-position: -5px -5px;
+                    }
+
+                    &-accepted-by-other {
+                        background-position: -42px -5px;
+                    }
+
+                    &-completed {
+                        background-position: -79px -5px;
+                    }
+
+                    &-accepted {
+                        background-position: -79px -45px;
+                    }
+
+                    &-start-work {
+                        background-position: -116px -45px;
+                    }
+
+                    &-need-vendor {
+                        background-position: -153px -45px;
+                    }
+
+                    &-accept-money {
+                        background-position: -266px -5px;
+                    }
+                }
+            }
+
+
+            &-header {
+                font-size: 14px;
+                height: 15px;
+                margin-bottom: 5px;
+
+                &_fn {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    float: left;
+                }
+
+                &_time {
+                    float: right;
+                    color: @font;
+                }
+
+                &_message {
+                    width: 300px;
+                    word-break: break-all;
+                    white-space: normal;
+                }
+            }
+        }
+    }
+
+    &--new-message {
+        margin: -32px 0 0 18px;
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        background-color: red;
+        color: wheat;
+        text-align: center;
+        font-size: 10px;
+        line-height: 13px;
+        border-radius: 15px;
+    }
+}
+
+    .ui.scrolling.dropdown .menu .item.item.item.iauto-notify--option,
+    .ui.dropdown .scrolling.menu > .item.item.item.iauto-notify--option {
+        border-top: 1px solid #dfe7eb;
+    }

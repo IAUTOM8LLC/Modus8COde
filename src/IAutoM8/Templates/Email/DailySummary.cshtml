@@ -1,0 +1,32 @@
+@model IAutoM8.Service.Notification.Models.DailySummaryModel
+@if (Model.ManagerSummary != null)
+{
+    <h3>as worker</h3>
+}
+<div>
+    <ul>
+        <li>Upcomings: @Raw(Model.WorkerSummary.Upcommings.Count> 0 ? string.Join("<br />", Model.WorkerSummary.Upcommings) : "0")</li>
+        <li>In progress: @Raw(Model.WorkerSummary.InProgressings.Count > 0 ? string.Join("<br />", Model.WorkerSummary.InProgressings) : "0")</li>
+        <li>Processing: @Raw(Model.WorkerSummary.Proccessings.Count > 0 ? string.Join("<br />", Model.WorkerSummary.Proccessings) : "0")</li>
+        <li>Decline review: @Raw(Model.WorkerSummary.DeclineReviews.Count > 0 ? string.Join("<br />", Model.WorkerSummary.DeclineReviews) : "0")</li>
+        <li>Need review: @Raw(Model.WorkerSummary.NeedReviews.Count > 0 ? string.Join("<br />", Model.WorkerSummary.NeedReviews) : "0")</li>
+        <li>Overdues: @Raw(Model.WorkerSummary.Overdues.Count > 0 ? string.Join("<br />", Model.WorkerSummary.Overdues) : "0")</li>
+        <li>Completed: @Raw(Model.WorkerSummary.Completed.Count > 0 ? string.Join("<br />", Model.WorkerSummary.Completed) : "0")</li>
+    </ul>
+</div>
+
+@if (Model.ManagerSummary != null)
+{
+    <h3>as reviewer</h3>
+    <div>
+        <ul>
+            <li>Upcomings: @Raw(Model.ManagerSummary.ManagerUpcommings.Count > 0 ? string.Join("<br />", Model.ManagerSummary.ManagerUpcommings) : "0")</li>
+            <li>In progress: @Raw(Model.ManagerSummary.ManagerInProccessings.Count > 0 ? string.Join("<br />", Model.ManagerSummary.ManagerInProccessings) : "0")</li>
+            <li>Processing: @Raw(Model.ManagerSummary.ManagerAcceptReviews.Count > 0 ? string.Join("<br />", Model.ManagerSummary.ManagerAcceptReviews) : "0")</li>
+            <li>Decline review: @Raw(Model.ManagerSummary.ManagerDeclineReviews.Count > 0 ? string.Join("<br />", Model.ManagerSummary.ManagerDeclineReviews) : "0")</li>
+            <li>Need review: @Raw(Model.ManagerSummary.ManagerNeedReviews.Count > 0 ? string.Join("<br />", Model.ManagerSummary.ManagerNeedReviews) : "0")</li>
+            <li>Overdues: @Raw(Model.ManagerSummary.ManagerReviewings.Count > 0 ? string.Join("<br />", Model.ManagerSummary.ManagerReviewings) : "0")</li>
+            <li>Completed: @Raw(Model.ManagerSummary.ManagerOverdues.Count > 0 ? string.Join("<br />", Model.ManagerSummary.ManagerOverdues) : "0")</li>
+        </ul>
+    </div>
+}

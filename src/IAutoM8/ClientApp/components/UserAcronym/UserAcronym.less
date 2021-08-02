@@ -1,0 +1,21 @@
+.user-acronym {
+    display: table;
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 100;
+    border-radius: 100em;
+    background-color: #ebbb10;
+
+    &:hover {
+        background: #ac7300;
+    }
+
+    &:after {
+        content: attr(data-acronym);
+        color: #fff;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+}

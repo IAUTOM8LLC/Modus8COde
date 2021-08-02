@@ -1,0 +1,179 @@
+@import '../../styles/breakpoints.less';
+@import '../../styles/variables.less';
+@import '../../styles/colors.less';
+@import '../../styles/mixins.less';
+
+.iauto-root {
+    font-family: 'Lato', sans-serif;
+
+    &__container.ui.segment {
+        margin-top: 0;
+        padding: 1rem 3rem;
+    }
+
+    &__main {
+        min-width: @sidebarWidth + 200px;
+        margin-left: 0;
+        transition: margin-left 500ms ease;
+
+        &--with-sidebar {
+            margin-left: @sidebarWidth;
+        }
+    }
+
+    &__navbar.ui.menu {
+        background-color: white;
+        border-bottom: 1px solid @bodyBorder;
+        height: @navbarHeight;
+        margin-bottom: 0;
+    }
+
+    &__sidebar.ui.menu.sidebar {
+        border: none;
+        border-right: 1px solid @bodyBorder;
+        bottom: 0;
+        box-shadow: none;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: @sidebarWidth;
+
+        .item {
+            color: @font;
+            font-weight: bold;
+            padding: 30px 40px;
+            text-transform: uppercase;
+
+            &.active,
+            &:hover:not(.header) {
+                background: none;
+                color: @fontAccent;
+
+                .icon {
+                    &.formulas {
+                        background-position: -87px -251px;
+                    }
+
+                    &.home {
+                        background-position: -87px -70px;
+                    }
+
+                    &.projects {
+                        background-position: -87px -104px;
+                    }
+
+                    &.users {
+                        background-position: -87px -212px;
+                    }
+
+                    &.skills {
+                        background-position: -87px -326px;
+                    }
+
+                    &.clients {
+                        background-position: -86px -370px;
+                    }
+
+                    &.credits {
+                        background-position: 1px -460px;
+                    }
+
+                    &.notifications {
+                        background-position: -66px -262px;
+                    }
+
+                    &.teams {
+                        background-position: -63px -197px;
+                    }
+                }
+            }
+
+            &.header {
+                background: url("/images/modus_8_logo.svg") no-repeat center;
+                background-size: 155px 189px;
+                height: @navbarHeight;
+                margin-bottom: 27px;
+            }
+
+            .icon {
+                .icons-sprite();
+                float: left;
+                height: 20px;
+                margin: 0 1.5em 0 2px;
+                width: 24px;
+
+                &.formulas {
+                    background-position: -87px -231px;
+                    height: 18px;
+                    margin-top: -4px;
+                }
+
+                &.home {
+                    background-position: -87px -53px;
+                    height: 15px;
+                    margin-top: -1px;
+                }
+
+                &.projects {
+                    background-position: -87px -87px;
+                    height: 15px;
+                    margin-top: -1px;
+                }
+
+                &.users {
+                    background-position: -87px -193px;
+                    height: 17px;
+                    margin-top: -2px;
+                }
+
+                &.skills {
+                    background-position: -87px -300px;
+                    height: 24px;
+                    margin: -5px 1.7em 0 -1px;
+                }
+
+                &.clients {
+                    background-position: -86px -350px;
+                    height: 20px;
+                    width: 26px;
+                    margin: -4px 1.7em 0 -2px;
+                }
+
+                &.credits {
+                    background-position: -18px -460px;
+                    height: 20px;
+                    width: 20px;
+                    margin: -4px 30px 0 -2px;
+                }
+
+                &.teams {
+                    background-position: -41px -197px;
+                    height: 23px;
+                    width: 24px;
+                    margin: -4px 1.7em 0 -2px;
+                }
+
+                &.notifications {
+                    height: 19px;
+                    width: 15px;
+                    background-position: -44px -262px;
+                    margin-right: 2em;
+                }
+
+                &.vendor-icon {
+                    width: 27px;
+                    height: 27px;
+                    background-position: -31px -367px;
+                }
+
+                &.info {
+                    background-position: 1px -412px;
+                }
+
+                &:before {
+                    content: none;
+                }
+            }
+        }
+    }
+}

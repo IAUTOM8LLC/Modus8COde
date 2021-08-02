@@ -1,0 +1,7 @@
+@background: #434755;
+@arrowBackground: @background;
+@arrowBoxShadow: none;
+@color: #fefefe;
+@border: none;
+@verticalPadding: .5em;
+@medium: 12px;

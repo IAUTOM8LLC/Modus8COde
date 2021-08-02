@@ -1,0 +1,92 @@
+@import '~@styles/mixins.less';
+
+.iauto-task-header {
+    margin-bottom: 20px;
+
+    .ui.segment {
+        padding: 0;
+    }
+
+    .ui.buttons {
+        padding-left: 25px;
+
+        .ui.button.feed {
+            min-width: 100px;
+        }
+    }
+
+    .icon-all-files {
+        i {
+            .icons-sprite();
+            display: inline-block;
+            width: 20px;
+            height: 19px;
+            margin: 0 5px 0 -10px;
+            background-position: -38px -320px;
+        }
+
+        span {
+            vertical-align: top;
+            margin-top: 5px;
+            display: inline-block;
+        }
+    }
+
+    .ui.button.iauto {
+        &.circular {
+            width: 39px;
+            height: 39px;
+        }
+
+        &.add-task,
+        &.import-tasks {
+            background-color: #f4f7f9;
+            padding: 11px 10px;
+
+            i.icon {
+                font-size: 10px;
+            }
+
+            &:hover {
+                background-color: #f4f7f9;
+            }
+        }
+
+        &:hover {
+            .icon-all-files i {
+                background-position: -60px -320px;
+            }
+        }
+    }
+
+    .ui.dropdown.add-task-dropdown {
+        color: #65318a;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 2px;
+
+        .icon.add {
+            float: left;
+        }
+
+        .menu {
+            .item {
+                padding: 8px 15px !important;
+
+                .icon,
+                .text {
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+    &__task-selectors {
+        margin: 23px 0 -13px;
+
+        .modus-items-filter {
+            margin-right: 10px;
+        }
+    }
+}

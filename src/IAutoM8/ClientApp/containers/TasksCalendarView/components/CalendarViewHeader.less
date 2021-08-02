@@ -1,0 +1,52 @@
+.calendar-view-header {
+    margin: -34px 0 8px;
+
+    &__days {
+        text-align: center;
+
+        &-label,
+        &-switcher {
+            display: inline-block;
+        }
+
+        &-switcher {
+            margin-right: 20px;
+
+            .ui.button {
+                margin-right: 6px;
+                font-size: 14px !important;
+                background-color: #f4f7f9 !important;
+
+                &:hover {
+                    background-color: #e1e7ec !important;
+                }
+            }
+
+            &--today {
+                line-height: 12px !important;
+            }
+
+            &--next,
+            &--prev {
+                .icon {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        &-label {
+            &.ui.header {
+                margin: 0;
+            }
+        }
+
+        &__view {
+            margin-left: 100px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        margin-bottom: 10px;
+    }
+}

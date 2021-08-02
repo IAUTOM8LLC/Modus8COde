@@ -1,0 +1,282 @@
+@import '../../styles/colors.less';
+@import '../../styles/mixins.less';
+@ease-out: all .3s cubic-bezier(0.23, 1, 0.32, 1);
+
+.ui.card > .content > .description,
+.ui.cards > .card > .content > .description {
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+.ui.card.grayed {
+    display:none
+}
+
+.ui.card.isdisabled {
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+ul.drag-inner-list,
+ul.drag-list {
+    list-style-type: none;
+    margin: 0 0 14px 0;
+    padding: 0;
+}
+
+.drag {
+    &-column {
+        background: #fefefe;
+        border-radius: 6px;
+        flex: 1;
+        margin-right: 20px;
+        overflow: visible;
+        position: relative;
+        .no-select();
+
+        @media (max-width: 690px) {
+            margin-bottom: 30px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &--header {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 28px 33px 16px;
+            .no-select();
+
+            h2 {
+                font-weight: 400;
+                color: #333;
+                font-size: 1.1rem;
+                margin: 0;
+                width: 100%;
+
+                strong {
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &--new {
+            background-color: #efeee8 !important;
+        }
+
+        &--in-progress {
+            background-color: #e5e9eb !important;
+        }
+
+        &--needs-review {
+            background-color: #e6e4ed !important;
+        }
+
+        &--completed {
+            background-color: #e0eeed !important;
+        }
+    }
+
+    &-container {
+        margin: 0 auto;
+    }
+
+    &-inner-list {
+        color: #333;
+        height: 100%;
+        min-height: 125px;
+    }
+
+    &-item {
+        border-radius: 5px;
+        margin: 14px;
+        transition: @ease-out;
+
+        &-card {
+            .task-footer {
+                margin-top: 18px;
+            }
+
+            &--highlighted {
+                -moz-animation: pulse 1.2s ease-in-out infinite;
+                -ms-animation: pulse 1.2s ease-in-out infinite;
+                -webkit-animation: pulse 1.2s ease-in-out infinite;
+                animation: pulse 1.2s ease-in-out infinite;
+            }
+
+            &.ui.card {
+                & > .content {
+                    padding: 20px;
+                    word-break: break-word;
+
+                    .task-detail__rating {
+                        .icon {
+                            margin-right: 2px;
+
+                            &.active {
+                                color: @fontAccent;
+                            }
+                        }
+                    }
+
+                    .header {
+                        font-size: 16px;
+                        padding: 6px 0 8px;
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    & > .description {
+                        color: #637b94;
+                        padding: 0 3px;
+                        font-size: 13px;
+
+                        img {
+                            display: none;
+                        }
+                    }
+
+                    .sub-header {
+                        color: @fontAccent;
+                        padding-bottom: 5px;
+                        float: left;
+
+                        &_container {
+                            width: 100%;
+                            border-bottom: 1px dashed #637b94;
+                            float: left;
+                        }
+                    }
+
+                    .icon.formulas {
+                        background: url(/images/icons-sprite.svg) no-repeat;
+                        background-size: 112px 494px;
+                        background-position: -87px -251px;
+                        height: 18px;
+                        width: 18px;
+                        float: left;
+                    }
+                }
+            }
+        }
+
+        &.is-moving {
+            background: rgba(0,0,0, 0.6);
+            transform: scale(1.1);
+        }
+    }
+
+    &-list {
+        display: flex;
+        .no-select();
+
+        @media (max-width: 690px) {
+            display: block;
+        }
+    }
+}
+    /* Dragula CSS  */
+    .gu {
+        &-hide {
+            display: none !important;
+        }
+
+        &-mirror {
+            list-style-type: none;
+            margin: 0 !important;
+            opacity: .8;
+            position: fixed !important;
+            z-index: 9999 !important;
+        }
+
+        &-transit {
+            opacity: .2;
+        }
+
+        &-unselectable {
+            .no-select();
+        }
+    }
+    /*
+ * Pulse animation 
+ */
+    @keyframes pulse {
+        0% {
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        100% {
+            -moz-transform: scale(1);
+            -ms-transform: scale(1);
+            -o-transform: scale(1);
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        50% {
+            -moz-transform: scale(0.9);
+            -ms-transform: scale(0.9);
+            -o-transform: scale(0.9);
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+    }
+
+    @-moz-keyframes pulse {
+        0% {
+            -moz-transform: scale(1);
+            transform: scale(1);
+        }
+
+        100% {
+            -moz-transform: scale(1);
+            transform: scale(1);
+        }
+
+        50% {
+            -moz-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+    }
+
+    @-webkit-keyframes pulse {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        50% {
+            -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+    }
+
+    @-ms-keyframes pulse {
+        0% {
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        100% {
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
+
+        50% {
+            -ms-transform: scale(0.9);
+            transform: scale(0.9);
+        }
+    }

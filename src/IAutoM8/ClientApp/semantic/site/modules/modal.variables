@@ -1,0 +1,26 @@
+@bodyColor: #f4f7f9;
+
+/*--------------
+Modal
+---------------*/
+@background: @bodyColor;
+
+/*--------------
+Header
+---------------*/
+@headerColor: #333333;
+@headerBackground: @bodyColor;
+@headerBorder: 'none';
+@headerPadding: 2.0rem 2.7rem 15px;
+@headerFontSize: 1.64em;
+
+/*--------------
+Content
+---------------*/
+@contentBackground: @bodyColor;
+
+/*--------------
+     Actions
+---------------*/
+@actionBackground: @bodyColor;
+@actionBorder: 'none';

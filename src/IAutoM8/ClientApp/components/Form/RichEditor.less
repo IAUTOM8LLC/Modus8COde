@@ -1,0 +1,83 @@
+.ql-snow {
+    &.ql-toolbar {
+        border: none;
+        padding: 0;
+        margin: 2px 0 18px;
+        display: flex;
+
+        .ql-formats {
+            border: 1px solid #d7dee5;
+            padding: 5px;
+            border-radius: 3px;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            button:hover {
+                background: #e7ecf0;
+            }
+
+            button.ql-active {
+                .ql-fill,
+                .ql-stroke.ql-fill {
+                    fill: #c3922e !important;
+                }
+
+                .ql-stroke {
+                    stroke: #c3922e !important;
+                }
+            }
+        }
+    }
+
+    &.ql-container {
+        border: none;
+
+        .ql-editor {
+            background: #fff;
+            border-radius: 4px;
+            min-height: 150px;
+            border: 2px solid #fff;
+
+            &.ql-blank:before {
+                content: "Type the description...";
+                color: #b5c1c7;
+                font-style: normal;
+            }
+
+            &:focus {
+                border-color: #c3922e;
+            }
+
+            .ql-video {
+                position: relative;
+                /* proportion value to aspect ratio 16:9 (9 / 16 = 0.5625 or 56.25%) */
+                padding-bottom: 56.25%;
+                padding-top: 30px;
+                height: 0;
+                overflow: hidden;
+
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    & .ql-fill,
+    & .ql-stroke.ql-fill {
+        fill: #637b94;
+    }
+
+    & .ql-stroke {
+        stroke: #637b94;
+    }
+}

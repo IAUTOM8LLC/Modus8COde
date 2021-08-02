@@ -1,0 +1,220 @@
+@import '~@styles/mixins.less';
+
+i.icon {
+    &.sharing-disabled {
+        background: url('/images/sharing-disabled.png') no-repeat center center;
+        width: 80px !important;
+        height: 95px !important;
+    }
+
+    &.iauto {
+        .icons-sprite();
+        font-size: 1.55em;
+
+        &.iauto--review-formula {
+            background-position: -78px -414px;
+            height: 16px !important;
+            width: 18px !important;
+
+            &:hover {
+                background-position: -95px -414px;
+            }
+        }
+
+        &.iauto--edit {
+            background-position: -86px -121px;
+            height: 16px !important;
+            width: 18px !important;
+
+            &:hover {
+                background-position: -86px -139px;
+            }
+        }
+
+        &.iauto--remove {
+            background-position: -85px -270px;
+            width: 16px !important;
+            height: 16px;
+
+            &:hover {
+                background-position: -85px -284px;
+            }
+        }
+
+        &.iauto--unlock {
+            background-position: -44px -136px;
+            height: 19px !important;
+            width: 15px !important;
+
+            &:hover {
+                background-position: -66px -136px;
+            }
+        }
+
+        &.iauto--lock {
+            background-position: -44px -220px;
+            height: 21px !important;
+            width: 15px !important;
+
+            &:hover {
+                background-position: -66px -219px;
+            }
+        }
+
+        &.iauto--calendar {
+            background-position: -43px -242px;
+            height: 17px !important;
+            width: 17px !important;
+
+            &:hover {
+                background-position: -65px -242px;
+            }
+        }
+
+        &.iauto--notification {
+            background-position: -44px -262px;
+            height: 19px !important;
+            width: 15px !important;
+
+            &:hover {
+                background-position: -66px -262px;
+            }
+        }
+
+        &.iauto--add {
+            background-position: -101px -285px;
+            height: 8px !important;
+            width: 8px !important;
+        }
+
+        &.iauto--add-white {
+            background-position: -101px -292px;
+            height: 8px !important;
+            width: 8px !important;
+        }
+
+        &.iauto--completed {
+            background-position: -21px 0px;
+            height: 17px !important;
+            width: 14px !important;
+        }
+
+        &.iauto--doing {
+            background-position: -1px -15px;
+            height: 14px !important;
+            width: 17px !important;
+        }
+
+        &.iauto--do {
+            background-position: 0 -51px;
+            height: 21px !important;
+            width: 21px !important;
+        }
+
+        &.iauto--review {
+            background-position: 0 -30px;
+            height: 21px !important;
+            width: 21px !important;
+        }
+
+        &.iauto--clock {
+            background-position: -3px 0;
+            height: 13px !important;
+            width: 13px !important;
+        }
+
+        &.iauto--play {
+            background-position: -48px -173px;
+            height: 14px !important;
+            width: 9px !important;
+        }
+
+        &.iauto--dropdown {
+            background-position: -42px -190px;
+            height: 5px !important;
+            width: 19px !important;
+
+            &:hover {
+                background-position: -64px -190px;
+            }
+        }
+
+        &.iauto--share {
+            background-position: -1px -79px;
+            height: 15px !important;
+            width: 14px !important;
+        }
+
+        &.iauto--download {
+            background-position: -8px -125px;
+            height: 19px !important;
+            width: 18px !important;
+        }
+
+        &.iauto--remove-white {
+            background-position: -8px -156px;
+            height: 17px !important;
+            width: 18px !important;
+        }
+
+        &.iauto--share-children {
+            background-position: -1px -94px;
+            height: 15px !important;
+            width: 15px !important;
+        }
+
+        &.iauto--share-globally {
+            background-position: -21px -95px;
+            height: 15px !important;
+            width: 15px !important;
+        }
+
+        &.task {
+            width: 27px;
+            height: 27px;
+            min-width: 27px;
+
+            &.one-time {
+                background-position: -3px -241px;
+            }
+
+            &.recurring {
+                background-position: -3px -272px;
+            }
+
+            &.conditional {
+                background-position: -3px -211px;
+            }
+
+            &.conditional-recurring {
+                background-position: -3px -302px;
+            }
+
+            &.interval {
+                background-position: -3px -333px;
+            }
+
+            &.formula {
+                background-position: -3px -182px;
+            }
+
+            &.overdue {
+                background-position: -3px -363px;
+            }
+
+            &.reset-zoom {
+                background-position: -42px 0;
+                width: 21px;
+                height: 21px;
+                min-width: 21px;
+            }
+
+            &.reset-pan {
+                background-position: -42px -21px;
+                width: 21px;
+                height: 21px;
+                min-width: 21px;
+            }
+        }
+    }
+}

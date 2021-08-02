@@ -1,0 +1,148 @@
+.modus-calendar-view {
+    position: relative;
+    min-height: 100vh;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+
+    .demo {
+        flex: 1;
+        min-height: 580px;
+
+        .rbc-header-gutter {
+            text-transform: uppercase;
+            color: #637b94;
+            text-align: center;
+            align-self: center;
+        }
+
+        .rbc-current-time-indicator {
+            height: 2px;
+            background: #0a95dd;
+
+            &:before {
+                background: #0a95dd;
+            }
+        }
+
+        .rbc-today {
+            background: #e3eaf0;
+        }
+
+        .rbc-time-content {
+            border-width: 1px;
+        }
+
+        .rbc-time-gutter {
+            .rbc-timeslot-group {
+                border-left: none !important;
+
+                .rbc-label {
+                    color: #637b94;
+                }
+            }
+        }
+
+        .rbc-day-slot {
+            .rbc-event {
+                border-top: none;
+                border-bottom: none;
+                border-right: none;
+            }
+
+            .rbc-time-slot {
+                border-top: none;
+            }
+        }
+
+        .rbc {
+            &-month,
+            &-time {
+                &-view {
+                    border-radius: 5px;
+                    border: 1px solid #d2d8db;
+                }
+            }
+
+            &-month {
+                &-header {
+                    height: 50px;
+                }
+            }
+
+            &-time {
+                &-view {
+                    .rbc-row {
+                        min-height: 25px;
+                    }
+                }
+
+                &-header {
+                    height: 100px;
+
+                    .rbc-header {
+                        min-height: 50px;
+                    }
+                }
+            }
+
+            &-timeslot-group {
+                min-height: 70px;
+            }
+
+            &-date-cell {
+                text-align: left;
+                padding: 10px 0 5px 10px;
+                font-weight: bold;
+                color: #637b94;
+
+                &.rbc-off-range {
+                    color: #c8d2db;
+                }
+            }
+
+            &-off-range-bg {
+                background-color: #f4f7f9;
+            }
+
+            &-header {
+                color: #637b94;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &-event {
+                border-left: 5px solid black;
+                padding: 7px 5px 6px;
+                border-radius: 3px;
+                z-index: 100;
+
+                &.in-progress {
+                    background-color: #858d90;
+                    background-color: rgba(86, 96,99, 0.7);
+                    border-color: #454d4f;
+                }
+
+                &.new {
+                    background-color: #dbba76;
+                    background-color: rgba(209, 160, 62, 0.7);
+                    border-color: #a78032;
+                }
+
+                &.needs-review {
+                    background-color: #8a64a7;
+                    background-color: rgba(93, 38, 132, 0.7);
+                    border-color: #4a1e6a;
+                }
+
+                &.completed {
+                    background-color: #58baa8;
+                    background-color: rgba(22, 160, 133, 0.7);
+                    border-color: #12806a;
+                }
+            }
+        }
+    }
+}

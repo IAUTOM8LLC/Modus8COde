@@ -1,0 +1,9 @@
+{
+    "parser": "babel-eslint",
+    "plugins": [
+        "immutable"
+    ],
+    "rules": {
+        "immutable/no-mutation": 0
+    }
+}

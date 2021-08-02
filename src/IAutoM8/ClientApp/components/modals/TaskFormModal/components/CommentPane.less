@@ -1,0 +1,86 @@
+.comments-pane {
+    &__add-section {
+        margin-bottom: 35px;
+
+        .fields > .field:nth-child(2) {
+            flex: 1;
+
+            .input {
+                width: 100% !important;
+                margin-left: 10px !important;
+                padding-right: 17px;
+
+                &:before {
+                    content: ' ';
+                    position: absolute;
+                    left: -13px;
+                    top: 14px;
+                    width: 0;
+                    height: 0;
+                    border-top: 10px solid rgba(0, 0, 0, 0);
+                    border-bottom: 10px solid rgba(0, 0, 0, 0);
+                    border-right: 13px solid #fff;
+                }
+            }
+        }
+    }
+
+    &__separator {
+        margin-bottom: 28px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid #d2d8db;
+
+        p {
+            color: #637b94;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    }
+
+    &__feed {
+        max-height: 400px;
+        overflow-y: auto;
+
+        .event {
+            margin-bottom: 20px !important;
+
+            .delete-comment {
+                visibility: hidden;
+                position: absolute;
+                right: 10px;
+                top: -8px;
+                font-weight: 100;
+                font-size: 14px;
+                background: #f4f7f9 !important;
+                color: #f44336;
+            }
+
+            &:hover {
+                .delete-comment {
+                    visibility: visible;
+                }
+            }
+        }
+
+        .content {
+            margin: 0 0 0 20px !important;
+            padding: 0 !important;
+
+            .summary {
+                position: relative;
+
+                .user {
+                    color: #333;
+                    text-transform: uppercase;
+                }
+            }
+
+            .extra {
+                &.text {
+                    max-width: none !important;
+                    padding-right: 50px;
+                }
+            }
+        }
+    }
+}

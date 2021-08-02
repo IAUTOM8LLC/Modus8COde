@@ -1,0 +1,11 @@
+@model IAutoM8.Service.Notification.Models.DailyToDoSummary
+@if (Model != null)
+{
+    <div>
+        <ul>
+            <li>Upcomings: @Raw(Model.UpcomingTasks.Count() > 0 ? string.Join("<br />", Model.UpcomingTasks) : "0")</li>
+            <li>ToDo: @Raw(Model.ToDoTasks.Count() > 0 ? string.Join("<br />", Model.ToDoTasks) : "0")</li>
+            <li>NeedsReview: @Raw(Model.NeedsReviewTasks.Count() > 0 ? string.Join("<br />", Model.NeedsReviewTasks) : "0")</li>
+        </ul>
+    </div>
+}

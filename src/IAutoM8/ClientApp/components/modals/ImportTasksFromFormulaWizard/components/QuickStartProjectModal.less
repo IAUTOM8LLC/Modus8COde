@@ -1,0 +1,39 @@
+.ui.modal.quick-start-project-modal {
+    .content {
+        text-align: center;
+
+        .quick-start-project-modal {
+            &__or {
+                color: #78909c;
+                margin-top: 16px;
+                font-size: 16px;
+                cursor: default;
+            }
+
+            &__skip {
+                color: #ca972f;
+                font-size: 16px;
+                border-bottom: 1px solid #c3922e;
+                margin-top: 8px;
+                display: inline-block;
+                cursor: pointer;
+
+                &:hover {
+                    color: darken(#ca972f, 5%);
+                }
+            }
+
+            &__start {
+                &.ui.button.iauto {
+                    margin-top: 43px;
+                    padding: 26px 71px;
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+
+    .actions {
+        text-align: left;
+    }
+}

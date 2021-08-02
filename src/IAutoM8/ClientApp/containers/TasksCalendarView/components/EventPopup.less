@@ -1,0 +1,99 @@
+.calendar-event-popup {
+    &.ui.popup {
+        padding: 0;
+        background: #ffffff;
+
+        &:before {
+            background: white;
+            box-shadow: none !important;
+        }
+
+        &.top {
+            .before-style(@color) {
+                &:before {
+                    background: @color;
+                }
+            }
+
+            &.in-progress {
+                .before-style(#858d90);
+            }
+
+            &.completed {
+                .before-style(#58baa8);
+            }
+
+            &.needs-review {
+                .before-style(#7d519d);
+            }
+
+            &.new {
+                .before-style(#dbba76);
+            }
+        }
+    }
+}
+
+.calendar-event {
+    &__body {
+        width: 270px;
+        padding: 20px;
+    }
+
+    &__item-description {
+        color: #637b94;
+        padding: 0 3px;
+        font-size: 13px;
+        word-break:break-word;
+    }
+
+    &__item-title {
+        color: #637b94;
+        padding: 0 3px;
+        font-size: 13px;
+    }
+
+    &__buttons {
+        height: 30px;
+
+        display: flex;
+
+        &--in-progress {
+            .buttons-style(#858d90);
+        }
+
+        &--completed {
+            .buttons-style(#58baa8);
+        }
+
+        &--needs-review {
+            .buttons-style(#7d519d);
+        }
+
+        &--new {
+            .buttons-style(#dbba76);
+        }
+
+        .ui.button.iauto {
+            flex: 1;
+            padding: 0;
+            background: inherit;
+            border-radius: 0;
+            color: white;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+    .buttons-style(@color) {
+        background: @color;
+
+        .ui.button.iauto {
+            &:hover {
+                background: darken(@color, 10%);
+            }
+        }
+    }
+}

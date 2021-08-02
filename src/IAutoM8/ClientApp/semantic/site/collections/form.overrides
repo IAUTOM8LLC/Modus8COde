@@ -1,0 +1,11 @@
+.ui.form .field,
+.ui.form .fields {
+    span.error {
+        float: right;
+        text-transform: uppercase;
+        color: #e6424b;
+        font-size: .73em;
+        font-weight: 600;
+        margin: 9px 1px 0 0;
+    }
+}
