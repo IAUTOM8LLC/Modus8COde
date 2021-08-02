@@ -52,7 +52,7 @@ namespace IAutoM8.Controllers.api
         //[Authorize(Roles = OwnerOrManager)]
         //[Route("addBulkProject")]
         //[HttpPost]
-        //public void ImportBulkProject(string path)
+        ////public void ImportBulkProject(string path)
         //{
         //    _projectService.BulkImportProject(path);
         //}
